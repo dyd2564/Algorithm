@@ -1,7 +1,8 @@
 n, m = map(int, input().split())
+arr = []
 num = list(map(int, input().split()))
 num.sort()
-arr = []
+
 def dfs(cnt):
     if cnt == m:
         print(*arr)
