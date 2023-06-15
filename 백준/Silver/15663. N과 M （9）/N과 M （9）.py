@@ -1,9 +1,9 @@
 n, m = map(int, input().split())
+arr = []
 num = list(map(int, input().split()))
 num.sort()
-arr = []
 visited = [0] * n
-def dfs(cnt, arr, visited):
+def dfs(cnt):
     if cnt == m:
         print(*arr)
         return
@@ -13,7 +13,7 @@ def dfs(cnt, arr, visited):
             arr.append(num[i])
             visited[i] = 1
             check = num[i]
-            dfs(cnt+1, arr, visited)
+            dfs(cnt+1)
             arr.pop()
             visited[i] = 0
-dfs(0, arr, visited)
+dfs(0)        
