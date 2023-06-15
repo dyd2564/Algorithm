@@ -2,8 +2,8 @@ from collections import deque
 def solution(priorities, location):
     answer = 0
     arr = [i for i in range(len(priorities))]
-    q = deque(priorities)
-    p = deque(arr)
+    q = deque(priorities) # 3 2 2 1
+    p = deque(arr) # 2 3 0 1
     ans = []
     while q:
         max_q = max(q)
