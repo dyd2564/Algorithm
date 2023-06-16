@@ -1,24 +1,26 @@
+from collections import deque
 def solution(s):
     answer = 0
-    temp = list(s)
+    arr = deque(s)
     
     for _ in range(len(s)):
-        arr = []
-        for i in range(len(temp)):
-            if len(arr) > 0:
-                if arr[-1] == '[' and temp[i] == ']':
-                    arr.pop()
-                elif arr[-1] == '(' and temp[i] == ')':
-                    arr.pop()
-                elif arr[-1] == '{' and temp[i] == '}':
-                    arr.pop()
+        ans = []
+        arr.append(arr.popleft())
+        for i in range(len(arr)):
+            if len(ans) > 0:
+                if ans[-1] == '[' and arr[i] == ']':
+                    ans.pop()
+                elif ans[-1] == '(' and arr[i] == ')':
+                    ans.pop()
+                elif ans[-1] == '{' and arr[i] == '}':
+                    ans.pop()
                 else:
-                    arr.append(temp[i])
+                    ans.append(arr[i])
             else:
-                arr.append(temp[i])
-        if len(arr) == 0:
+                ans.append(arr[i])
+        if len(ans) == 0:
             answer += 1
-        temp.append(temp.pop(0))
+       
 
     return answer
  
