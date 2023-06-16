@@ -1,12 +1,12 @@
 from collections import Counter
 def solution(k, tangerine):
-    answer = 0
+    sum1 = 0
     arr = Counter(tangerine)
     arr = sorted(arr.values(), reverse=True)
     cnt = 0
     for i in arr:
-        cnt += i
-        answer += 1
-        if cnt >= k:
+        sum1 += i
+        cnt += 1
+        if sum1 >= k:
             break
-    return answer
+    return cnt
