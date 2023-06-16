@@ -1,4 +1,5 @@
 def solution(citations):
+    answer = 0
     citations.sort()
     n = len(citations)
     
@@ -7,3 +8,5 @@ def solution(citations):
             return n-i
     
     return 0
+            
+    
