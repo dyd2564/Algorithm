@@ -5,7 +5,7 @@ def solution(l, r):
             a = str(i)
             flag = True
             for j in a:
-                if int(j) != 0 and int(j) != 5:
+                if int(j) not in [0,5]:
                     flag = False
                     break
             if flag:
