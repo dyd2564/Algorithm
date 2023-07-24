@@ -1,6 +1,6 @@
 -- 코드를 입력하세요
-SELECT distinct(a.car_id)
-from car_rental_company_car a join car_rental_company_rental_history b
-on a.car_id = b.car_id
-where a.car_type = '세단' and b.start_date like '2022-10%'
-order by a.car_id desc
+SELECT DISTINCT B.CAR_ID
+FROM CAR_RENTAL_COMPANY_CAR A JOIN CAR_RENTAL_COMPANY_RENTAL_HISTORY B
+ON A.CAR_ID = B.CAR_ID
+WHERE B.START_DATE LIKE '%-10-%' AND A.CAR_TYPE = '세단'
+ORDER BY 1 DESC
