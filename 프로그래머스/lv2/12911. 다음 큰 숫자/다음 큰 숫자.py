@@ -1,9 +1,9 @@
 def solution(n):
+    a1 = bin(n)[2:].count('1')
     answer = n+1
-    cnt1 = bin(n).count('1')
     while True:
-        cnt2 = bin(answer).count('1')
-        if cnt1 == cnt2:
+        a2 = bin(answer)[2:].count('1')
+        if a1 == a2:
             break
         answer += 1
     return answer
