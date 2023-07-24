@@ -1,16 +1,25 @@
+from collections import deque
 def solution(s):
-    answer = 0
-    stack = []
-    for i in s:
-        if len(stack) == 0:
-            stack.append(i)
-        else:
-            if stack[-1] == i:
-                stack.pop()
-            else:
-                stack.append(i)
-    if len(stack) == 0:
-        answer = 1
+    answer = -1
     
+    q = deque(s)
+    stack = []
+    
+    while q:
+        a = q.popleft()
+        if stack and stack[-1] == a:
+            stack.pop()
+        else:
+            stack.append(a)
+    if q or stack:
+        return 0
+    else:
+        return 1
+            
+            
+        
+    
+    
+
 
     return answer
