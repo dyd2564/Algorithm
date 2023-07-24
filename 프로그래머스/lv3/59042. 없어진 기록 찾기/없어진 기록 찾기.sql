@@ -1,11 +1,6 @@
 -- 코드를 입력하세요
-# SELECT b.animal_id, b.name
-# from animal_ins a left join animal_outs b
-# on a.animal_id = b.animal_id
-# where b.animal_id is not null
-
-
-select b.animal_id, b.name
-from animal_ins a right join animal_outs b
-on a.animal_id = b.animal_id
-where a.animal_id is null
+SELECT O.ANIMAL_ID, O.NAME
+FROM ANIMAL_INS I RIGHT OUTER JOIN ANIMAL_OUTS O
+ON I.ANIMAL_ID = O.ANIMAL_ID
+WHERE I.ANIMAL_ID IS NULL
+ORDER BY 1, 2
