@@ -1,19 +1,25 @@
+from collections import deque
+
 def solution(s):
     answer = True
-    arr = []
-    for i in s:
-        if i == '(':
-            arr.append(i)
-        elif i == ')' and len(arr) > 0:
-            arr.pop()
-        else:
-            return False
-    if len(arr) > 0:
-        answer = False
-    else:
-        answer = True
+    q = deque(s)
+    stack = []
     
+    if q[0] == ')':
+        return False
+    else:
+        while q:
+            a = q.popleft()
+            if a == '(':
+                stack.append(a)
+            else: # ) 일때
+                if stack:
+                    stack.pop()
+                else:
+                    return False
+    if stack or q:
+        return False
     
     
 
-    return answer
+    return True
