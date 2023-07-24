@@ -1,5 +1,5 @@
 -- 코드를 입력하세요
-SELECT a.animal_id, a.name
-from animal_ins a join animal_outs b
-on a.animal_id = b.animal_id
-order by b.datetime - a.datetime desc limit 2
+SELECT A.ANIMAL_ID,A.NAME
+FROM ANIMAL_INS A JOIN ANIMAL_OUTS B
+ON A.ANIMAL_ID = B.ANIMAL_ID
+ORDER BY DATEDIFF(B.DATETIME, A.DATETIME) DESC LIMIT 2
