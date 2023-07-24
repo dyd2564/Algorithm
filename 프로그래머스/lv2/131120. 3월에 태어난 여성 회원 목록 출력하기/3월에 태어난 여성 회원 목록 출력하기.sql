@@ -1,7 +1,6 @@
 -- 코드를 입력하세요
-SELECT member_id, member_name, gender, date_format(date_of_birth, '%Y-%m-%d') date_of_birth
-from member_profile
-where date_format(date_of_birth, '%m') = '03' and tlno is not null and gender = 'W'
-order by 1
-
-# select * from member_profile
+SELECT MEMBER_ID, MEMBER_NAME, GENDER, DATE_FORMAT(DATE_OF_BIRTH, '%Y-%m-%d') as DATE_OF_BIRTH
+FROM MEMBER_PROFILE
+WHERE DATE_OF_BIRTH LIKE '%03%'
+AND TLNO IS NOT NULL AND GENDER = 'W'
+ORDER BY 1
