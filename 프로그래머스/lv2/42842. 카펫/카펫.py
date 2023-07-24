@@ -2,11 +2,10 @@ def solution(brown, yellow):
     answer = []
     total = brown + yellow
     width, height = 0, 0
-    for i in range(total, 0, -1):
+    for i in range(total, 1, -1):
         if total % i == 0:
+            height = total//i
             width = i
-            height = total // i
-            if (width - 2) * (height - 2) == yellow:
-                answer.append((width, height))
-                break
-    return answer[0]
+            if (height-2)*(width-2) == yellow:
+                return [width, height]
+    
